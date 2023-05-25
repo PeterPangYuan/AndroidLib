@@ -1,2 +1,3 @@
 rootProject.name = "shell"
 include ':app'
+include ':network'

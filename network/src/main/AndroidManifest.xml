@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pcy.netlibrary">
+
+    <!--权限配置start-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--权限配置end-->
+
+</manifest>
+
