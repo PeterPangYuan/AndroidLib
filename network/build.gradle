@@ -1,5 +1,10 @@
 apply plugin: 'com.android.library'
 
+// 产物构建发布gradle
+apply from: '../publish.gradle'
+// 产物版本
+version('1.0.0')
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
