@@ -19,23 +19,20 @@ ext {
 //    PUBLISH_VERSION = '1.0.0'
 }
 
-group('com.pcy')
-version('1.0.0')
-
 uploadArchives {
     repositories.mavenDeployer {
         def deployPath = file(project.GITHUB_REPO_PATH)
         repository(url: "file://${deployPath.absolutePath}")
-//        pom.project {
-//            groupId project.PUBLISH_GROUP_ID
-//            artifactId project.PUBLISH_ARTIFACT_ID
-//            version project.PUBLISH_VERSION
-//        }
+        pom.project {
+            groupId project.PUBLISH_GROUP_ID
+            artifactId project.PUBLISH_ARTIFACT_ID
+            version project.PUBLISH_VERSION
+        }
     }
 }
 
 // 源代码一起打包
-task androidSourcesJar(type: Jar) {
+tasks.register('androidSourcesJar', Jar) {
     classifier 'sources'
     from android.sourceSets.main.java.sourceFiles
 }
